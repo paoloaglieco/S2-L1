@@ -1,0 +1,34 @@
+
+          .-~~~-.
+  .- ~ ~-(       )_ _
+ /                    ~ -.
+|         [INTERNET]       ',
+ \                         .'
+   ~- ._ ,. ,.,.,., ,.. -~
+           '       '
+__________________________________________________________________________________________________________________
+|_____|_____|_____|_____|_____|_____|_____|_____|_____|_____|_____|_____|_______|______|________|_______|____|____
+___|_____|_____|_____|_____|_____|_____|_____|_____|_____|_____|_____|_____|___|____|____|_____|_____|_____|______
+|_____|_____|_____|_____|_____|____|_____|_____|_____|[FIREWALL]|_____|____|_____|_____|_____|_____|_____|_____|__
+___|_____|_____|_____|_____|_____|_____|_____|_____|_____|_____|_____|_____|________|______|_______|_______|_______
+|_____|_____|_____|_____|_____|_____|_____|_____|_____|_____|_____|_____|____|___|____|______|______|______|______|_
+___|_____|_____|_____|_____|_____|_____|_____|_____|_____|_____|_____|_____|______|______|_____|_____|_____|_____|__
+                                                                 
+            [DMZ ZONE]                                                                 [INTRANET]
+                                                      ___   _      ___ _      ___   _      ___   _      ___   _
+                                                     [(_)] |=|  [(_)] |=|    [(_)] |=|    [(_)] |=|    [(_)] |=|
+                                                           |_|     '-'|_|     '-`  |_|     '-`  |_|     '-`  |_|     
+        *----------------------------------*        *-------------------------------------------------------------*
+        |Server WEB|                                                            |SERVER/NAS|
+
+        [HTTP]    ||                       |
+        [STMP]    ||                       |
+
+
+
+Analisi dello scenario:
+
+Nello scenario illustrato INTERNET è connesso al firewall perimetrale che filtra la connessione in entrata e in uscita dal network composto da un intranet, una DMZ e dei server.L'amministratore per configurare il firewall sceglie un approccio top-down all'interno
+delle policy set, scegliendo IP sorgente,Ip destinazione, porta e l'action da utilizzare(deny,accept e drop) e alla fine blocca tutte le connessione in entrata e uscita all'inteno delle policy.
+In questo modo il firewall saprà come comportarsi in caso di una determinata richiesta. Il firewall quindi gestirà le connessioni all'interno dell'intranet, le richieste esterne o interne ai servizi pubblici quali mail (STMP) e web(HTTP) o nel caso di richiesta ai
+server o NAS che contengono risorse o informazioni sensibili rifiutera ogni richiesta interna o esterna.
